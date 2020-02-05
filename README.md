@@ -1,7 +1,7 @@
 # udacityCapstoneProject
 Data Engineering Nanodegree Capstone Project
 
-#Goals
+# Goals
 
 The goals of the final Capstone Project is to analyse several large datasets and identify a strategy to 
 load the data into a Data Warehouse where the data can be analysed and queried.
@@ -15,27 +15,27 @@ The datasets available within the Udacity Project workspace have been used:
 - **Airport Code Table**: source Datahub
   
 
-#Uses Cases
+# Uses Cases
 
 There dataset can be used by data scientists and analysts to gain deeper understanding of the raising climate temperatures 
 (within continents, countries, cities and around airports.). The findings can be also projected on US demographics to
 explore how different genders or ethnic groups are also impacted.
 
-#Tools
+# Tools
 
-###Airflow 
+### Airflow 
 Apache Airflow is an open-source tool for designing and executing computational workflows and data processing pipelines.
 It was adopted in this project for providing a visual representations on the workflow and create re-usable operators. 
 
  
-###Redshift and S3
+### Redshift and S3
 
 Amazon Redshift is an cloud-based data warehouse solution which supports storing and querying petabytes of structured 
 and semi-structured data using standard SQL. It tightly integrates with Amazon S3 allowing to fetch large amount of
 data as well as saving the output of the data computation.
 
 
-#Data Model
+# Data Model
 
 The data model involves 3 staging tables (staging_temperature_data, staging_us_city_data, staging_airport_code_data) and
 a Star Scheme design with a Fact table (temperatures) and 3 dimensions (Cities, Airports, Time).
@@ -76,7 +76,7 @@ The ETL is modeled with the etl.dag
 
 
 
-#Executing the pipeline
+# Executing the pipeline
 
 Start a RedShift cluster (note down attributes as they are required during the Airflow setup)
 
@@ -102,7 +102,7 @@ First execute the 'create_data_model_dag'
 
 Proceed and execute the 'etl.tag'
 
-#What If
+# What If
 
 ***If the data was increased by 100x*** the whole process needs to scale up.
 The initial preprocess could be done using Apache Spark which, due to large volume distributed processing capabilities,
@@ -117,19 +117,3 @@ relevant to the day)
 ***If the database needed to be accessed by 100+ people.*** the data warehouse would rely on Redshift scalability
 capabilities and possibly look at the Concurrency Scaling feature (outside the scope of this course)
 
-
-
-
- 
-
-
-#Step 5: Complete Project Write Up
-What's the goal? What queries will you want to run? How would Spark or Airflow be incorporated? Why did you choose the model you chose?
-Clearly state the rationale for the choice of tools and technologies for the project.
-Document the steps of the process.
-Propose how often the data should be updated and why.
-Post your write-up and final data model in a GitHub repo.
-Include a description of how you would approach the problem differently under the following scenarios:
-If the data was increased by 100x.
-If the pipelines were run on a daily basis by 7am.
-If the database needed to be accessed by 100+ people.
