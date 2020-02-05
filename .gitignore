@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+*.iml
+*.cfg
+*.pem
+*.zip
+__pycache__
