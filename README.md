@@ -3,8 +3,8 @@ Data Engineering Nanodegree Capstone Project
 
 # Goals
 
-The goals of the final Capstone Project is to analyse several large datasets and identify a strategy to 
-load the data into a Data Warehouse where the data can be analysed and queried.
+The goals of the final Capstone Project is to analyse large datasets and identify a strategy to 
+load the data into a Data Warehouse where it can be analysed and queried.
 
 ## Datasets
 
@@ -17,9 +17,9 @@ The datasets available within the Udacity Project workspace have been used:
 
 # Uses Cases
 
-There dataset can be used by data scientists and analysts to gain deeper understanding of the raising climate temperatures 
+The datasets can be used by data scientists and analysts to gain deeper understanding of the raising climate temperatures 
 (within continents, countries, cities and around airports.). The findings can be also projected on US demographics to
-explore how different genders or ethnic groups are also impacted.
+explore how different genders or ethnic groups might be impacted.
 
 # Tools
 
@@ -37,16 +37,17 @@ data as well as saving the output of the data computation.
 
 # Data Model
 
-The data model involves 3 staging tables (staging_temperature_data, staging_us_city_data, staging_airport_code_data) and
-a Star Scheme design with a Fact table (temperatures) and 3 dimensions (Cities, Airports, Time).
+The data model involves 3 staging tables (staging_temperature_data, staging_us_city_data, staging_airport_code_data) 
+which map the structure of the corresponding dataset.
+The other tables represent the Star Scheme with a Fact table (temperatures) and 3 dimensions (Cities, Airports, Time).
 
 # Solution
 
 There are three main steps involved in the solution:
-* one-off preprocessing of the data: this is performed using Python and Panda library and aims at preparing the 
+* Pre-Process: one-off preprocessing of the data: this is performed using Python and Panda library and aims at preparing the 
  data for the ETL 
-* create the data model which will store the data
-* execute the ETL
+* Create Data Model: create the data model which will store the data
+* Perform ETL: execute the ETL pipeline
 
 
 ## Pre-Process
@@ -61,6 +62,8 @@ The data clean up tasks performed are:
 * drop rows where essential attribute were not provided (i.e. AverageTemperature, City, Country)
 * rename columns 
 * convert to JSON format 
+
+Once processed the data is store on S3 ***s3://beppe-udacity-capstone/capstone***
 
 ## Create Data Model
 
@@ -104,10 +107,10 @@ Proceed and execute the 'etl.tag'
 
 # What If
 
-***If the data was increased by 100x*** the whole process needs to scale up.
-The initial preprocess could be done using Apache Spark which, due to large volume distributed processing capabilities,
-can handle a lot more data. 
-Redhshift cluster could add additional (more powerful) nodes while data engineers should leverage the Redshift features
+***If the data was increased by 100x*** the whole process needs to scale up.  
+The initial pre-process could be done using Apache Spark which, due to large volume distributed processing capabilities,
+can handle a lot more data.   
+Redhshift cluster could add additional (more powerful) nodes while data engineers would leverage the Redshift features
 (distkey, sortkey) to maximise throughput of the sql joins and sorting.
 
 ***If the pipelines were run on a daily basis by 7am.*** the configuration of the ETL DAB would be modified to run 
@@ -115,5 +118,5 @@ daily, together with the data files which would include a timestamp in the filen
 relevant to the day)
 
 ***If the database needed to be accessed by 100+ people.*** the data warehouse would rely on Redshift scalability
-capabilities and possibly look at the Concurrency Scaling feature (outside the scope of this course)
+capabilities and possibly look at the Concurrency Scaling feature (outside the scope of this course).
 
