@@ -15,7 +15,8 @@ from helpers import SqlQueries
 
 default_args = {
     'owner': 'beppe',
-    'start_date': datetime(2019, 1, 12),
+    'schedule_interval': None,
+    'start_date': datetime(2020, 1, 1),
     'depends_on_past': False,
     'email_on_retry': False,
     'retries': 0
@@ -24,7 +25,7 @@ default_args = {
 dag = DAG('etl_dag',
           catchup=False,
           default_args=default_args,
-          description='Create Star schema'
+          description='Perform ETL pipeline'
           )
 
 start_operator = DummyOperator(task_id='begin', dag=dag)
