@@ -10,7 +10,8 @@ from operators.data_quality import DataQualityOperator
 
 default_args = {
     'owner': 'beppe',
-    'start_date': datetime(2019, 1, 12),
+    'schedule_interval': None,
+    'start_date': datetime(2020, 1, 1),
     'depends_on_past': False,
     'email_on_retry': False,
     'retries': 0
