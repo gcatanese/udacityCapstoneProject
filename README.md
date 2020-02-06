@@ -101,7 +101,7 @@ The Redshift host must be entered.
 
 ***Run the DAGs***  
 
-First execute the 'create_data_model_dag'
+In Airflow first execute the 'create_data_model_dag'
 
 Proceed and execute the 'etl.tag'
 
