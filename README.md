@@ -69,7 +69,7 @@ Once processed the data is store on S3 ***s3://beppe-udacity-capstone/capstone**
 
 The creation of the data model is defined with its own DAG 
 
-![Alt text](wiki/data_model_dag.PNG.jpg?raw=true "Title")
+![Alt text](wiki/data_model_dag.jpg?raw=true "Title")
 
 ## Perform ETL
 
@@ -88,14 +88,14 @@ Start Airflow and configure the following:
 ***AWS Credentials***  
 In Airflow Administration create an 'Amazon Web Service' connection, see the following as an example
 
-![Alt text](wiki/AWS services.png?raw=true "Title")
+![Alt text](wiki/aws_services.png?raw=true "Title")
 
 The AWS credentials must be used.
 
 ***Postgres Connection***    
 In Airflow Administration create a 'Postgres' connection, see the following as an example:
 
-![Alt text](wiki/Redshift Connection.PNG?raw=true "Title")
+![Alt text](wiki/redshift_connection.png?raw=true "Title")
 
 The Redshift host must be entered.
 
