@@ -5,3 +5,4 @@
 *.pem
 *.zip
 __pycache__
+GlobalLandTemperaturesByCity.csv
