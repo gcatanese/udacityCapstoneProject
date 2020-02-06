@@ -113,10 +113,10 @@ can handle a lot more data.
 Redhshift cluster could add additional (more powerful) nodes while data engineers would leverage the Redshift features
 (distkey, sortkey) to maximise throughput of the sql joins and sorting.
 
-***If the pipelines were run on a daily basis by 7am.*** the configuration of the ETL DAB would be modified to run 
+***If the pipelines were run on a daily basis by 7am*** the configuration of the ETL DAB would be modified to run 
 daily, together with the data files which would include a timestamp in the filename (in order to process the data 
 relevant to the day)
 
-***If the database needed to be accessed by 100+ people.*** the data warehouse would rely on Redshift scalability
+***If the database needed to be accessed by 100+ people*** the data warehouse would rely on Redshift scalability
 capabilities and possibly look at the Concurrency Scaling feature (outside the scope of this course).
 
